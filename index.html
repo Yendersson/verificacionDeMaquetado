@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .header {
+        width: 100%;
+        position: relative;
+        height: 90vh;
+        /*modificar al tener la imagen principal*/
+        /*background-color: #F5F5F5;*/
+        background-color: #ddd;
+        border-bottom: 5px solid orange;
+
+    }
+
+    /****************************HEADER************************************/
+
+    .header__nav {
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        padding: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .header__img--logo {
+        width: 50%
+    }
+
+    .header__img--logo img {
+        width: 100%
+    }
+
+    .header__container {
+        width: 90%;
+        padding: 2em;
+        position: absolute;
+        top: 10%
+    }
+
+    .header__container--inpot {
+        width: 100%;
+        position: relative;
+
+    }
+
+    .header__container input {
+        width: 100%;
+        border-radius: 1em;
+        border: none;
+        padding: 0.5em
+    }
+
+
+    /***************MAIN*****************/
+
+    .main {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .blogs {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .blog__card {
+        flex: 100%;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .blog__img {
+        width: 100%;
+        height: 200px;
+        background-color: black;
+    }
+
+    .blog__text {
+        padding: 1em;
+    }
+
+    .blog__date {
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+    /*FOOTER*/
+
+    .footer__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+    }
+
+
+    /********600px Design**********/
+    @media (min-width:600px) {
+
+        .header {
+            height: 50vh;
+        }
+
+        .header__img--logo {
+            width: 20%
+        }
+
+
+        .header__container {
+
+            width: 40%
+        }
+
+        .blogs {
+            gap: 4%;
+        }
+
+        .blog__card {
+            flex: 30%
+        }
+
+        .footer__container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+</style>
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="header__nav">
+
+        <div class="header__img--logo">
+            <img alt="logo" src="https://d34a9flj5lovc9.cloudfront.net/web/img/logo_300x55.svg">
+        </div>
+
+        <div class="header__img--menu">
+            <!-- <img alt="logo" src="">  -->
+            <button> boton </button>
+
+        </div>
+
+    </div>
+
+    <div class="header__container">
+
+        <div>
+            <h2>Novedades sobre ecommerce y marketing digital</h2>
+            <h1>Lo ultimo sobre ecommerce</h1>
+        </div>
+
+        <div class="header__container--input">
+            <input type="text" placeholder="buscar">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <div class="blogs">
+
+        <% for(BlogPost blog : BlogPost.DAO().findAll()) { %>
+            <div class="blog__card">
+                <div class="blog__img">
+                    <!-- img blog-->
+
+                </div>
+
+                <div class="blog__text">
+                    <span class="blog__date">
+                        <%= blog.getDatetime() %>
+                    </span>
+                    <h2>
+                        <%=blog.getTitle() %>
+                    </h2>
+
+                    <p>
+                        <%=blog.getText() %>
+                    </p>
+
+                    <span class="post__by">
+                        <%= blog.getBlogAuthor()%>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <% } %>
+
+                <div class="blog__card">
+                    <div class="blog__img">
+                        <!-- img blog-->
+
+                    </div>
+
+                    <div class="blog__text">
+                        <span class="blog__date">6 septiembre 2022</span>
+                        <h2>Mensaje</h2>
+
+                        <p>
+                            Comunicarte con tu cliente es super importante para brindarle una mejor
+                            experiencia de compra. Te mostramos como funcionan!
+                        </p>
+
+                        <span class="post__by">Por: Claudio Reyes</span>
+
+                    </div>
+
+                </div>
+
+                <div class="blog__card">
+                    <div class="blog__img">
+                        <!-- img blog-->
+
+                    </div>
+
+                    <div class="blog__text">
+                        <span class="blog__date">6 septiembre 2022</span>
+                        <h2>Mensaje</h2>
+
+                        <p>
+                            Comunicarte con tu cliente es super importante para brindarle una mejor
+                            experiencia de compra. Te mostramos como funcionan!
+                        </p>
+
+                        <span class="post__by">Por: Claudio Reyes</span>
+
+                    </div>
+
+                </div>
+
+    </div>
+
+    <button class="btn__blogs" style="display: block; margin: auto; border-radius: 2em; width: 30%; padding: 1em;">Ver
+        mas</button>
+</div>
+
+<!-- footer -->
+
+<div class="footer" style="background-color: black; color: #fff; padding:2em;">
+    <div class="footer__container">
+        <div class="footer__img" style="width: 20%">
+            <img alt="logo" src="https://d34a9flj5lovc9.cloudfront.net/web/img/logo_300x55.svg" style="width: 100%">
+        </div>
+
+        <div class="footer__text">
+            <p style="font-size:0.8em; font-weight: bold;">Comprar online Argnetina</p>
+            <span>2020- Todos los derechos reservados </span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
