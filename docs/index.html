@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/49b34297e3.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Varela Round', sans-serif;
+        ;
+    }
+
+    .header {
+        width: 100%;
+        padding: 2em;
+        position: relative;
+        background: linear-gradient(#EFEFEF, #F5F5F5);
+        height: 80vh;
+        border-bottom: 10px solid #EA9709;
+    }
+
+    .header__nav {
+        /* width: 100%; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* position: sticky; */
+        background: #EFEFEF;
+        position: fixed;
+        padding: 1em 2em;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+
+    .header__img--logo {
+        width: 60%;
+    }
+
+    .header__img--logo img {
+        width: 100%;
+    }
+
+    .header__button--img button {
+        background-color: white;
+        border-radius: 2em;
+        border: none;
+        padding: 1em;
+    }
+
+    .header__button--img button i {
+        font-size: 1.5em;
+    }
+
+    .header__icon--desktop {
+        display: none;
+    }
+
+    .header__container {
+        margin-top: 40%;
+        width: 80%;
+    }
+
+    .header__container p {
+        color: #EA9709;
+        font-size: 1.1em;
+    }
+
+    .header__container h1 {
+        font-size: 2.1em;
+    }
+
+
+
+    .header__input {
+        width: 100%;
+        position: relative;
+    }
+
+    .header__input input {
+        width: 100%;
+        padding: 0.5em;
+        border-radius: 1em;
+        border: 0.5px solid #ddd;
+    }
+
+    .img-search {
+        position: absolute;
+        background-color: #EA9709;
+        padding: 0.3em;
+        padding-left: 0.5em;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom-right-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+
+    .header__input i {
+        font-size: 1em;
+        color: white;
+    }
+
+    .main{
+        width: 100%;
+        margin: 50px auto
+    }
+
+    .blogs{
+        margin: 50px auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10%;
+    }
+
+    .blogs__container{
+        margin-top: 20px;
+        flex-basis: 100%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        
+    }
+
+    .blogs__img{
+        width: 100%;
+    }
+
+    .blogs__img img{
+        width: 100%;
+        display: block;
+    }
+
+    .blogs__text{
+        width: 100%;
+        padding: 2em;
+    }
+
+    .text__date{
+        color: gray;
+        border-bottom: 1px solid gray;
+        text-transform: uppercase;
+    }
+
+    .btn__load{
+        width: 100%;
+        max-width: 200px;
+        display: block;
+        margin: auto;
+        border-radius: 1em;
+        padding: 0.5em 1em;
+        text-transform: uppercase;
+        border: 2px solid gray;
+        color: gray;
+        font-weight: 900;
+        background: transparent;
+    }
+
+    .footer{
+        width: 100%;
+        background-color: #1A1A1A;
+        color: white;
+        padding: 2em;
+    }
+
+    .footer__container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__img--logo{
+        width: 60%;
+        margin: auto;
+        
+    }
+
+    .footer__img--logo img{
+        width: 100%;
+    }
+
+    .footer__text{
+        font-size: 0.8em;
+    }
+
+    /* RESPONSIVE */
+
+    /* MIN  600PX*/
+
+    @media (min-width: 600px) {
+        .header__button--img {
+            display: none;
+        }
+
+        .header__icon--desktop {
+            display: block;
+        }
+
+        .header__icon--desktop i {
+            margin-right: 10px;
+        }
+
+        .header__img--logo {
+            width: 30%;
+        }
+
+        .header__container {
+            margin-top: 10%;
+            width: 40%;
+        }
+
+        .header {
+            height: 45vh;
+            padding: 2em 3em;
+        }
+
+        .blogs__container{
+            flex-basis: 45%;
+        }
+
+    }
+
+    /* MIN 1024PX */
+
+    @media (min-width: 1024px) {
+
+        .header {
+            padding: 2em 4em;
+        }
+
+        .header__container {
+            margin-top: 5%;
+            width: 35%;
+        }
+
+        .header__img--logo {
+            width: 20%;
+        }
+
+        .header__container p {
+            color: #EA9709;
+            font-size: 1.3em;
+        }
+
+        .header__container h1 {
+            font-size: 2.2em;
+        }
+
+        .blogs{
+            width: 80%;
+            gap: 5%;
+        }
+
+        .blogs__container{
+            flex-basis: 30%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .header__img--logo {
+            width: 15%;
+        }
+
+        .header {
+            padding: 2em 5em;
+        }
+
+        .header__container {
+            width: 30%;
+        }
+    }
+
+    /* MIN  1700 PX*/
+
+    @media (min-width:1700px){
+
+        .header{
+            height: 60vh;
+        }
+
+        .header__container{
+            width: 25%;
+        }
+
+        .header__container p {
+            color: #EA9709;
+            font-size: 1.9em;
+        }
+
+        .header__container h1 {
+            font-size: 2.8em;
+        }
+    }
+</style>
+
+<body>
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <!-- HEADER NAV -->
+        <div class="header__nav">
+            <div class="header__img--logo">
+                <img src="https://d34a9flj5lovc9.cloudfront.net/web/img/logo_300x55.svg" alt="">
+            </div>
+            <div class="header__button--img">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- icon Desktop -->
+            <div class="header__icon--desktop">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+
+        <!-- HEADER CONTAINER -->
+        <div class="header__container">
+            <p>Novedades sobre ecommerce y marketing digital</p>
+
+            <h1>Lo último sobre Ecommerce</h1>
+            <div class="header__input">
+                <input type="text">
+                <div class="img-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <div class="blogs">
+
+                <!-- BLOGS AQUI JSP -->
+                <div class="blogs__container">
+                    <div class="blogs__img">
+                        <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="alt">
+                    </div>
+
+                    <div class="blogs__text">
+                        <span class="text__date">4 de septiembre del 2022</span>
+
+                        <h2>Mensajes</h2>
+
+                        <p>Comunicarte con tu cliente es súper
+                            importante para brindarle una mejor
+                            experiencia de compra. ¡Te mostramos
+                            cómo funcionan!</p>
+
+                        <div style="border: 2px solid black; width: 15%;"></div>
+
+                        <p>Por: <span>Claudia Reyes</span> </p>
+                    </div>
+                </div>
+                <!-- fin de jsp -->
+
+                <!-- BLOGS HARDCODED -->
+                <div class="blogs__container">
+                    <div class="blogs__img">
+                        <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="alt">
+                    </div>
+
+                    <div class="blogs__text">
+                        <span class="text__date">4 de septiembre del 2022</span>
+
+                        <h2>Mensajes</h2>
+
+                        <p>Comunicarte con tu cliente es súper
+                            importante para brindarle una mejor
+                            experiencia de compra. ¡Te mostramos
+                            cómo funcionan!</p>
+
+                        <div style="border: 2px solid black; width: 15%;"></div>
+
+                        <p>Por: <span>Claudia Reyes</span> </p>
+                    </div>
+                </div>
+
+                <div class="blogs__container">
+                    <div class="blogs__img">
+                        <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="alt">
+                    </div>
+
+                    <div class="blogs__text">
+                        <span class="text__date">4 de septiembre del 2022</span>
+
+                        <h2>Mensajes</h2>
+
+                        <p>Comunicarte con tu cliente es súper
+                            importante para brindarle una mejor
+                            experiencia de compra. ¡Te mostramos
+                            cómo funcionan!</p>
+
+                        <div style="border: 2px solid black; width: 15%;"></div>
+
+                        <p>Por: <span>Claudia Reyes</span> </p>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <button class="btn__load">Ver todas</button>
+        </div>
+
+        <div class="footer">
+            <div class="footer__container">
+                <div class="footer__img--logo">
+                    <img src="https://d34a9flj5lovc9.cloudfront.net/web/img/logo_300x55.svg" alt="footer__img--logo">
+                </div>
+
+                <div class="footer__text">
+                    <p>Comprar Online Argentina</p>
+                    <span>©2022 - Todos los derechos reservados</span>
+                </div>
+
+            </div>
+
+        </div>
+
+</body>
+
+</html>
