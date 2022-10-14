@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/49b34297e3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            padding: 2em;
+            position: relative;
+            background: linear-gradient(#EFEFEF, #F5F5F5);
+        }
+
+        .header__nav {
+            /* width: 100%; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* position: sticky; */
+            background: #EFEFEF;
+            position: fixed;
+            padding: 1em 2em;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 3;
+        }
+
+        .header__img--logo {
+            width: 60%;
+        }
+
+        .header__img--logo img {
+            width: 100%;
+        }
+
+        .header__button--img button {
+            background-color: white;
+            border-radius: 2em;
+            border: none;
+            padding: 1em;
+        }
+
+        .header__button--img button i {
+            font-size: 1.5em;
+        }
+
+        .header__icon--desktop {
+            display: none;
+        }
+
+        .header__container{
+            margin-top: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container__blog--text{
+            width: 100%;
+            
+        }
+
+        .container__blog--img{
+            width: 100%;
+        }
+
+        .container__blog--img img{
+            width: 100%;
+        }
+
+
+        .blog__date{
+            display: none;
+        }
+
+
+
+
+        .main {
+            width: 100%;
+            margin: 50px auto
+        }
+
+        .blogs {
+            margin: 50px auto;
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10%;
+        }
+
+        .blogs__container {
+            margin-top: 20px;
+            flex-basis: 100%;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        }
+
+        .blogs__img {
+            width: 100%;
+        }
+
+        .blogs__img img {
+            width: 100%;
+            display: block;
+        }
+
+        .blogs__text {
+            width: 100%;
+            padding: 2em;
+        }
+
+        .text__date {
+            color: gray;
+            border-bottom: 1px solid gray;
+            text-transform: uppercase;
+            font-size: 0.7em;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #1A1A1A;
+            color: white;
+            padding: 2em;
+        }
+
+        .footer__container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer__img--logo {
+            width: 60%;
+            margin: auto;
+
+        }
+
+        .footer__img--logo img {
+            width: 100%;
+        }
+
+        .footer__text {
+            font-size: 0.8em;
+        }
+
+        @media (min-width: 600px) {
+
+            .header__button--img {
+                display: none;
+            }
+
+            .header__icon--desktop {
+                display: block;
+            }
+
+            .header__icon--desktop i {
+                margin-right: 10px;
+            }
+
+            .header__img--logo {
+                width: 30%;
+            }
+
+            .header__container{
+                margin-top: 10%;
+            }
+
+            .blogs__container {
+                flex-basis: 45%;
+            }
+
+
+            .footer__img--logo {
+                width: 20%;
+                margin: 1px;
+            }
+
+            .footer__container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+
+            .header__img--logo {
+                width: 20%;
+            }
+
+            .header__container{
+                margin-top: 5%;
+                flex-direction: row;
+            }
+
+            .blogs {
+                width: 80%;
+                gap: 5%;
+            }
+
+            .blogs__container {
+                flex-basis: 30%;
+            }
+
+            .footer {
+                padding: 4em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            .header__img--logo {
+                width: 15%;
+            }
+
+        }
+
+        /* MIN  1700 PX*/
+
+        @media (min-width:1700px) {}
+    </style>
+
+    <div class="header">
+        <div class="header__nav">
+            <div class="header__img--logo">
+                <img src="https://d34a9flj5lovc9.cloudfront.net/web/img/logo_300x55.svg" alt="">
+            </div>
+            <div class="header__button--img">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- icon Desktop -->
+            <div class="header__icon--desktop">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+
+        <div class="header__container">
+            <div class="container__blog--text">
+                <span class="blog__date">11 de septiembre 2020</span>
+                <p class="blog__summary">La informacion es clave:</p>
+                <h1>Paginas</h1>
+
+                <p blog__texto>
+                    La idea de tener una tienda online es que tus clientes puedan realizar compras
+                    con confianza y de manera segura. Por eso, adelantarnos a muchas inquietudes
+                    que puedan tener, será muy importante.
+                </p>
+
+                <div class="postedBy">
+                    <div class="postedBy__img">
+                        <img src="" alt="">
+                    </div>
+                    <p>Escrito por:</p>
+                    <span>Claudio Reyes</span>
+                </div>
+
+            </div>
+            <div class="container__blog--img">
+                <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+
+    <div class="main">
+
+
+        <div class="blogs">
+
+            <!-- BLOGS AQUI JSP -->
+
+            <!--<% for(BlogPost blog : BlogPost.DAO().findAll()){ %>-->
+            <div class="blogs__container">
+                <div class="blogs__img">
+                    <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="alt">
+                </div>
+
+                <div class="blogs__text">
+                    <span class="text__date">4 de septiembre del 2022</span>
+
+                    <h2>
+                        <!--<%= blog.getTitle() %>-->
+                    </h2>
+
+                    <p>
+                        <!--<%= blog.getText() %>-->
+                    </p>
+
+                    <div style="border: 2px solid black; background:black;; width: 15%;"></div>
+
+                    <p>Por: <span>
+                            <!--<%=blog.getBlogAuthor() %>-->
+                        </span> </p>
+                </div>
+            </div>
+            <!-- 
+
+                <%} %>
+            -->
+            <!-- fin de jsp -->
+
+            <!-- BLOGS HARDCODED -->
+
+            <div class="blogs__container">
+                <div class="blogs__img">
+                    <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="alt">
+                </div>
+
+                <div class="blogs__text">
+                    <span class="text__date">4 de septiembre del 2022</span>
+
+                    <h2>Mensajes</h2>
+
+                    <p>Comunicarte con tu cliente es súper
+                        importante para brindarle una mejor
+                        experiencia de compra. ¡Te mostramos
+                        cómo funcionan!</p>
+
+                    <div style="border: 2px solid black; width: 15%;"></div>
+
+                    <p>Por: <span>Claudia Reyes</span> </p>
+                </div>
+            </div>
+
+            <div class="blogs__container">
+                <div class="blogs__img">
+                    <img src="https://compraronline.s3.amazonaws.com/BlogPostOK/148/1663008980237_200.png" alt="alt">
+                </div>
+
+                <div class="blogs__text">
+                    <span class="text__date">4 de septiembre del 2022</span>
+
+                    <h2>Mensajes</h2>
+
+                    <p>Comunicarte con tu cliente es súper
+                        importante para brindarle una mejor
+                        experiencia de compra. ¡Te mostramos
+                        cómo funcionan!</p>
+
+                    <div style="border: 2px solid black; width: 15%;"></div>
+
+                    <p>Por: <span>Claudia Reyes</span> </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__img--logo">
+                <img src="https://d34a9flj5lovc9.cloudfront.net/web/img/logo_300x55.svg" alt="footer__img--logo">
+            </div>
+
+            <div class="footer__text">
+                <p>Comprar Online Argentina</p>
+                <span>©2022 - Todos los derechos reservados</span>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
